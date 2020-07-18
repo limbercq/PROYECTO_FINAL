@@ -1,0 +1,23 @@
+
+.CarruselSlide{
+    max-height: 1204px;
+}
+
+.tipografia_1{
+    
+    font-family: 'Lobster-Regular', cursive;
+    text-align: center;
+    
+}
+.fw-50{
+    font-size: 50px;
+}
+
+.btn-card{
+    border-radius: 0 ;
+}
+.modal-header {
+    background-color: #4099ff;
+    color: white;
+    text-align: center!important;
+  }
