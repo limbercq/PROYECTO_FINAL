@@ -18,68 +18,9 @@
 
 <body>
     
-  <!-- menu -->
-  <nav class="navbar navbar-expand-lg navbar-light  bg-light bg-primary" > 
-    <a class="navbar-brand tipografia_1" href="#"><h3>Hotel</h3></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#habitacines">Habiataciones</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contactos</a>
-        </li>
-        <li class="nav-item"> 
-            <a class="btn btn-outline-info my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal" >Iniciar sesion</a>
-          
-        </li>
-      </ul>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title tipografia_1" id="exampleModalLabel">Inciar Sesion</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form class="was-validated" novalidate>
-              <div class="form-row">
-                <div class="col-md-12">
-                  <label for="validationCustom01" class="text-info">Correo</label>
-                  <input type="text" class="form-control" id="validationCustom01" name="user" required>
-                  <div class="invalid-feedback">
-                    Ingrese el correo
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <label for="validationCustom02" class="text-info">Contraseña</label>
-                  <input type="password" class="form-control" id="validationCustom02" name="password" required>
-                  <div class="invalid-feedback">
-                    Ingrese la contraseña
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary btn-block " data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-outline-info btn-block m-0">Iniciar Sesion</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- fin menu -->
+  <?php 
+       include_once('menu_1.php')
+  ?>
   <div class="container">
     
     <h1 class="tipografia_1 fw-50">Reserva de Habiatacion</h1>       
@@ -95,21 +36,37 @@
               <div class="card mb-3">
                   <img class="card-img-top" src="img/m-dof1420.jpg" alt="Card image cap" style="height: 500px;">
                   <div class="card-body">
-                      <h5 class="card-title tipografia_1">Habitacion imperial</h5>              
-                      <li><span class="text-info">Precio :</span> 300 Bs.</li>
-                      <li><span class="text-info">Tipo : </span> Matrimonial</li>
-                      <li><span class="text-info">Nro Camas :</span> 1</li>
-                      <div class="form-row">
-                        <div class="col-md-3">
-                          <label for="validationCustom01" class="text-info">Fecha de incio</label>
-                          <input type="date" class="form-control" id="validationCustom01" name="nombre" required>
-                        </div>
-                        <div class="col-md-3">
-                          <label for="validationCustom02" class="text-info">Fecha final</label>
-                          <input type="date" class="form-control" id="validationCustom02" name="apellido" required>
-                        </div>
-                        
+                      <h5 class="card-title tipografia_1">Habitacion imperial</h5>  
+                      <div class="row">
+                      <div class="col-md-6">
+                        <li><span class="text-info">Precio :</span> 300 Bs.</li>
+                        <li><span class="text-info">Tipo : </span> Matrimonial</li>
+                        <li><span class="text-info">Nro Camas :</span> 1</li>
+                        <div class="form-row">
+                          <div class="col-md-6">
+                            <label for="validationCustom01" class="text-info">Fecha de inicio</label>
+                            <input type="date" class="form-control" id="validationCustom01" name="nombre" required>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="validationCustom02" class="text-info">Fecha final</label>
+                            <input type="date" class="form-control" id="validationCustom02" name="apellido" required>
+                          </div>
+                        </div>  
                       </div> 
+                      <div class="col-md-6 ">
+                        <h5 class="text-info">Politicas de la Empresa</h5>
+                        <ul>
+                          <li>La reserva se hacen con el 5% del costo de la habitacion</li>
+                          <li>Se podra realizar la reprogramacion de la fecha solo una vez</li>
+                          <li>No hay reembolso de la Reserva</li>
+                        </ul>
+                        <div class="custom-control custom-checkbox mb-3">
+                          <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                          <label class="custom-control-label" for="customControlValidation1">Terminos y condiciones</label>
+                          <div class="invalid-feedback">Acepte el termino de condiciones</div>
+                        </div>
+                      </div>
+                      </div>            
                   </div>              
               </div>
               <div class=""> 
@@ -241,14 +198,9 @@
       </form>
   </div>
     
-  <footer class="page-footer font-small blue">
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright: Proyecto
-    </div>
-    <!-- Copyright -->
-  
-  </footer>
+  <?php 
+         include('footer.php')
+    ?>
 </body>
 
 <script src="js/jquery-3.2.1.min.js"></script>
