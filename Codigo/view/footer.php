@@ -1,5 +1,5 @@
 
-  <footer class="page-footer font-small blue">
+  <footer class="page-footer font-small blue col-12">
     <div class="footer-copyright text-center row  justify-content-center py-3">
       <div class="col-auto">
         © 2020 Copyright: 
