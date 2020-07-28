@@ -1,9 +1,13 @@
 
 <?php
+// if(!empty($_POST["flujo"])){
+//     $F =$_POST['flujo'];;
+// }
+
 
 if(empty($_GET["codProceso"])){
-     $codFlujo='F3';
-    $codProceso='P1';
+        $codFlujo='F1';
+        $codProceso='P1';
 }else{
   $codFlujo=$_GET["codFlujo"];
   $codProceso=$_GET["codProceso"];      
@@ -21,7 +25,7 @@ $archivo=$fila['pantalla'];
 
 // codigo para cuando el siguiente proceso es null
 
-    if($codProcesoSiguiente=='null'){
+    if($codProcesoSiguiente=='null' or $codProcesoSiguiente=='NULL' ){
     
         $consulta="select * from procesocond where codFlujo='$codFlujo' and codProceso='$codProceso'";
         $resultado=mysqli_query($conexion,$consulta);
@@ -33,6 +37,7 @@ $archivo=$fila['pantalla'];
            $codProcesoSiguiente=$fila['codProcesoNo'];
 
         }
+        
     }
 
 ?>
@@ -57,7 +62,7 @@ $archivo=$fila['pantalla'];
             <?php 
             include_once('view/menu.php');
             // echo $codProcesoSiguiente. '<br>';
-            // echo $archivo;
+            echo $archivo;
              ?>
         <div class="row align-items-center">
             <div class="col-12"> <h1 class="tipografia_1">Motor de Flujo</h1>  </div>

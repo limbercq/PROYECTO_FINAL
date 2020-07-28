@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-07-2020 a las 15:37:45
--- Versión del servidor: 10.1.31-MariaDB
--- Versión de PHP: 7.2.3
+-- Tiempo de generación: 29-07-2020 a las 00:37:10
+-- Versión del servidor: 10.1.10-MariaDB
+-- Versión de PHP: 5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -43,7 +41,6 @@ CREATE TABLE `caja` (
 --
 
 CREATE TABLE `cliente` (
-  `id_cliente` int(11) NOT NULL,
   `ci` varchar(15) DEFAULT NULL,
   `nro_tarjeta` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -52,10 +49,10 @@ CREATE TABLE `cliente` (
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`id_cliente`, `ci`, `nro_tarjeta`) VALUES
-(1, '20160341', 54642131),
-(2, '20170291', 547000),
-(3, '3160733', 213132132);
+INSERT INTO `cliente` (`ci`, `nro_tarjeta`) VALUES
+('20160341', 54642131),
+('20170291', 547000),
+('3160733', 213132132);
 
 -- --------------------------------------------------------
 
@@ -97,8 +94,8 @@ INSERT INTO `habitacion` (`codhabitacion`, `tipo`, `costo`, `nro_camas`, `estado
 ('B108', 'familiar', 400, 4, 0),
 ('B109', 'familiar', 400, 4, 0),
 ('C100', 'matrimonial', 300, 2, 0),
-('C101', 'matrimonial', 300, 2, 0),
-('C102', 'matrimonial', 300, 2, 0),
+('C101', 'matrimonial', 300, 2, 1),
+('C102', 'matrimonial', 300, 2, 1),
 ('C103', 'matrimonial', 300, 2, 0),
 ('C104', 'matrimonial', 300, 2, 0),
 ('C105', 'matrimonial', 300, 2, 0),
@@ -116,7 +113,6 @@ INSERT INTO `habitacion` (`codhabitacion`, `tipo`, `costo`, `nro_camas`, `estado
 --
 
 CREATE TABLE `huesped` (
-  `id_huesped` int(11) NOT NULL,
   `ci` varchar(15) DEFAULT NULL,
   `nro_tarjeta` int(11) DEFAULT NULL,
   `estado` int(1) DEFAULT NULL
@@ -126,11 +122,15 @@ CREATE TABLE `huesped` (
 -- Volcado de datos para la tabla `huesped`
 --
 
-INSERT INTO `huesped` (`id_huesped`, `ci`, `nro_tarjeta`, `estado`) VALUES
-(1, '5162068', 65656565, 1),
-(2, '1712056', 15464654, 1),
-(3, '20161989', 12132131, 0),
-(4, '20170291', 54700066, 1);
+INSERT INTO `huesped` (`ci`, `nro_tarjeta`, `estado`) VALUES
+('5162068', 65656565, 1),
+('1712056', 15464654, 1),
+('20161989', 12132131, 0),
+('20170291', 54700066, 1),
+('20170291', 54700066, 1),
+('10174528', 21321546, 1),
+('20170291', 54700066, 1),
+('11010101', 1111, 1);
 
 -- --------------------------------------------------------
 
@@ -139,7 +139,6 @@ INSERT INTO `huesped` (`id_huesped`, `ci`, `nro_tarjeta`, `estado`) VALUES
 --
 
 CREATE TABLE `reserva` (
-  `id_reserva` int(11) NOT NULL,
   `fecha_ingreso` date DEFAULT NULL,
   `fecha_salida` date DEFAULT NULL,
   `sw_reprogramacion` tinyint(1) DEFAULT NULL,
@@ -151,9 +150,9 @@ CREATE TABLE `reserva` (
 -- Volcado de datos para la tabla `reserva`
 --
 
-INSERT INTO `reserva` (`id_reserva`, `fecha_ingreso`, `fecha_salida`, `sw_reprogramacion`, `ci`, `codhab`) VALUES
-(1, '2020-08-05', '2020-08-07', 0, '20170291', 'A100'),
-(2, '2020-07-05', '2020-07-10', 0, '3160733', 'A101');
+INSERT INTO `reserva` (`fecha_ingreso`, `fecha_salida`, `sw_reprogramacion`, `ci`, `codhab`) VALUES
+('2020-08-05', '2020-08-07', 0, '20170291', 'A100'),
+('2020-07-05', '2020-07-10', 0, '3160733', 'A101');
 
 -- --------------------------------------------------------
 
@@ -162,7 +161,6 @@ INSERT INTO `reserva` (`id_reserva`, `fecha_ingreso`, `fecha_salida`, `sw_reprog
 --
 
 CREATE TABLE `se_hospeda` (
-  `id_se_hospeda` int(11) NOT NULL,
   `fecha_ingreso` date DEFAULT NULL,
   `fecha_salida` date DEFAULT NULL,
   `ci` varchar(15) DEFAULT NULL,
@@ -173,10 +171,14 @@ CREATE TABLE `se_hospeda` (
 -- Volcado de datos para la tabla `se_hospeda`
 --
 
-INSERT INTO `se_hospeda` (`id_se_hospeda`, `fecha_ingreso`, `fecha_salida`, `ci`, `codhab`) VALUES
-(1, '2020-08-14', '2020-08-17', '20161989', 'A104'),
-(2, '2020-08-13', '2020-08-15', '1712056', 'A105'),
-(3, '2020-08-05', '2020-08-07', '20170291', 'A100');
+INSERT INTO `se_hospeda` (`fecha_ingreso`, `fecha_salida`, `ci`, `codhab`) VALUES
+('2020-08-14', '2020-08-17', '20161989', 'A104'),
+('2020-08-13', '2020-08-15', '1712056', 'A105'),
+('2020-08-05', '2020-08-07', '20170291', 'A100'),
+('2020-08-05', '2020-08-07', '20170291', 'A100'),
+('2020-07-29', '2020-07-30', '10174528', 'C101'),
+('2020-08-05', '2020-08-07', '20170291', 'A100'),
+('2020-08-06', '2020-08-08', '11010101', 'C102');
 
 -- --------------------------------------------------------
 
@@ -198,6 +200,7 @@ CREATE TABLE `tarjeta` (
 --
 
 INSERT INTO `tarjeta` (`nro_tarjeta`, `cvc`, `nom_tajeta`, `mes`, `año`, `ci`) VALUES
+(1111, 12, 'visa', 12, 2021, '11010101'),
 (642131, 4454, 'bisa', 2, 2022, '20160341'),
 (12132131, 8698, 'mercantil', 10, 2022, '20161989'),
 (15464654, 8878, 'union', 1, 2021, '1712056'),
@@ -232,7 +235,10 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`ci`, `nombre`, `apellido`, `nacionalidad`, `correo`, `password`) VALUES
 ('10174528', 'CAMILA', 'MACHACA', 'argentino', 'test@gmail.com', 'oio12'),
+('11010101', 'dadw', 'adww', 'addw', 'v@gmail.com', '111'),
+('111', 'ddedw', 'dwada', 'cac', 'd@gmail.com', '11818'),
 ('1712056', 'IVETTE', 'COLQUE', 'boliviano', 'vijay@gmail.com', '121'),
+('201020', 'pepe', 'link', 'chilena', 's@gmail.com', '123456'),
 ('20160341', 'JHOVANA', 'RAMOS', 'boliviano', 'anuj.lpu1@gmail.com', '123456'),
 ('20161989', 'NANCY', 'GUTIERREZ', 'boliviano', 'amrita@test.com', '121vd'),
 ('20168745', 'ANDREA', 'JIMENEZ', 'peruano', 'amit12@gmail.com', '8797'),
@@ -259,7 +265,6 @@ ALTER TABLE `caja`
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id_cliente`),
   ADD KEY `ci` (`ci`);
 
 --
@@ -272,14 +277,12 @@ ALTER TABLE `habitacion`
 -- Indices de la tabla `huesped`
 --
 ALTER TABLE `huesped`
-  ADD PRIMARY KEY (`id_huesped`),
   ADD KEY `ci` (`ci`);
 
 --
 -- Indices de la tabla `reserva`
 --
 ALTER TABLE `reserva`
-  ADD PRIMARY KEY (`id_reserva`),
   ADD KEY `carnet` (`ci`),
   ADD KEY `codhab` (`codhab`);
 
@@ -287,7 +290,6 @@ ALTER TABLE `reserva`
 -- Indices de la tabla `se_hospeda`
 --
 ALTER TABLE `se_hospeda`
-  ADD PRIMARY KEY (`id_se_hospeda`),
   ADD KEY `ci` (`ci`),
   ADD KEY `codhab` (`codhab`);
 
@@ -303,34 +305,6 @@ ALTER TABLE `tarjeta`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`ci`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `huesped`
---
-ALTER TABLE `huesped`
-  MODIFY `id_huesped` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `reserva`
---
-ALTER TABLE `reserva`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `se_hospeda`
---
-ALTER TABLE `se_hospeda`
-  MODIFY `id_se_hospeda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
@@ -360,7 +334,6 @@ ALTER TABLE `reserva`
 --
 ALTER TABLE `tarjeta`
   ADD CONSTRAINT `tarjeta_ibfk_1` FOREIGN KEY (`ci`) REFERENCES `usuario` (`ci`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
