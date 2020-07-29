@@ -1,19 +1,7 @@
 <?php 
 session_start();
 
-	// echo $_SESSION['ci'];
-	// echo $_SESSION['nombre']=$_POST['nombre'];
-	// echo $_SESSION['apellido']=$_POST['apellido'];
-	// echo $_SESSION['nacionalidad']=$_POST['nacionalidad'];
-	// echo $_SESSION['emial']=$_POST['emial'];
-	// echo $_SESSION['password']=$_POST['password'];
-	// echo $_SESSION['nro_tarjeta']=$_POST['nro_tarjeta'];
-	// echo $_SESSION['cvc']=$_POST['cvc'];
-	// echo $_SESSION['nom_tarjeta']=$_POST['nom_tarjeta'];
-	// echo $_SESSION['mes']=$_POST['mes'];
-	// echo $_SESSION['anno']=$_POST['anno'];
-
-// include("controladoringresaDatosRegCli.php");
+if (isset($POST['datos_cliente'])){
  $ci=$_SESSION['ci'];
  $nombre=$_SESSION['nombre'];
  $apellido=$_SESSION['apellido'];
@@ -48,4 +36,10 @@ session_start();
  	</form>
  	
  <?php  include("controladoringresaDatosRegCli.php"); ?>
- </div>
+ 
+ <?php
+}else{
+            echo "no hay datos";
+}
+?>
+</div>

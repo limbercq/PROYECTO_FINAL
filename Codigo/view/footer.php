@@ -5,7 +5,7 @@
         © 2020 Copyright: 
       </div>
       <div class="col-auto">
-        <span class="text-info">Proyecto workfow: Integrantes</span>
+        <span class="text-info">Proyecto Workflow: Integrantes</span>
         <ul>
           <li>Choque Flores Ines milenka </li>
           <li>Choque Quisbert Limber Alberto</li>

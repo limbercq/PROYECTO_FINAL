@@ -38,7 +38,7 @@ else{
 echo "ERES NUEVO USUARIO PORFAVOR LLENA EL FORMULARIO PARA REALIZAR TU RESERVA :";
 echo "<br>";
 echo "<form method='POST'>";
-echo "<input type='submit' class='btn btn-success' value='CLIK PARA LLENAR FORMULARIO' name='si'> ";
+echo "<input type='submit' class='btn btn-success' value='CLICK PARA LLENAR FORMULARIO' name='si'> ";
 echo "</form>";
 	
 }
