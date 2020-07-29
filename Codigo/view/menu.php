@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="motor.php">Inicio <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
         </li>
       </ul>
     </div>

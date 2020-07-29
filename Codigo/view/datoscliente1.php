@@ -1,59 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>FORMULARIO PARA LLENAR DATOS DEL CLIENTE</title>
-</head>
-<?php 
 
- ?>
-<body>
-	<form method="post">
+<div class="col-6">
+	<form method="post" class="was-validated">
 		<!-- ***************datos del cliente********* -->
 		<label for="ci">CI : </label>
-		<input type="text" name="ci"  value="">
-		<br>
+		<input class="form-control" type="text" name="ci"  value="" required>
+		
 		<label for="nombre">nombre : </label>
-		<input type="text" name="nombre" required>
-		<br>
+		<input class="form-control" type="text" name="nombre" required>
+		
 		<label for="apellido">apellido : </label>
-		<input type="text" name="apellido" required>
-		<br>
+		<input class="form-control" type="text" name="apellido" required>
+		
 		<label for="nacionalidad">nacionalidad : </label>
-		<input type="text" name="nacionalidad" required>
-		<br>
+		<input class="form-control" type="text" name="nacionalidad" required>
+		
 		<h4>INGRESE CORREO PARA CREAR USUARIO</h4>
 		
 		<label for="emial">correo : </label>
-		<input type="emial" name="emial" placeholder="ejemplo@gmail.com" required><br>
+		<input class="form-control" type="emial" name="emial" placeholder="ejemplo@gmail.com" required>
 		<label for="password">crear otra contraseña : </label>
-		<input type="password" name="password" required>
-		<br><br>
+		<input class="form-control" type="password" name="password" required>
+		
 		<!-- ***************datos de la tarjeta********* -->
 		<label for="nro_tarjeta">NRO_TARJETA</label>
-		<input type="number" name="nro_tarjeta" required>
-		<br>
+		<input class="form-control" type="number" name="nro_tarjeta" required>
+		
 		<label for="cvc">CVC</label>
-		<input type="number" name="cvc" required>
-		<br>
+		<input class="form-control" type="number" name="cvc" required>
+		
 		<label for="nom_tarjeta">NOMBRE TARJETA</label>
-		<input type="text" name="nom_tarjeta" placeholder="bisa" required>
-		<br>
+		<input class="form-control" type="text" name="nom_tarjeta" placeholder="bisa" required>
+		
 		<label for="mes">MES</label>
-		<input type="number" name="mes" max="12" min="1" placeholder="01" required> 
-		<br>
+		<input class="form-control" type="number" name="mes" max="12" min="1" placeholder="01" required> 
+		
 		<label for="anno">AÑO</label>
-		<input type="number" name="anno" min="2019"  max="2050" placeholder="2020" required> 
-		<br>
+		<input class="form-control" type="number" name="anno" min="2019"  max="2050" placeholder="2020" required> 
+		
 		<!-- ***************datos de la reserva********* -->
 		
-		<input type="submit" value="ENVIAR" name="datos_cliente">
-		<br>
-		<br>
+		<input type="submit"  class="btn btn-success mt-2" value="ENVIAR" name="datos_cliente">
+		
+		
 
 	</form>
 
-
-	
-</body>
-</html>
+	</div>
+	<div class="col-6">
+    <img src="img/registrar.jpg" alt="Card image cap" class="card-img-top">
+	<img src="img/tarjeta-de-credito.jpg" alt="Card image cap" class="card-img-top">
+</div>	

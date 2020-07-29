@@ -1,4 +1,4 @@
-<div class="col-12">
+<div class="col-6">
 <?php 
 
 include ("controladorelegirfecha.php");
@@ -15,17 +15,17 @@ include ("controladorelegirfecha.php");
       </ul>
     </div>        
 </div>
-
-
-<h1>elegir fecha de reserva </h1><br>
-<div class="col-4">
+</div>
+<div class="col-6 text-center">
+<h3 class="tipografia_2 text-info">Elegir fecha de reserva </h3><br>
+<div class="col-8">
 	<form action="" method="post">
 		<label for="fini">FECHA INICIAL</label>
 		<input class="form-control" type="date" name="fini" >
 		<label for="fnal">FECHA final</label>
 		<input class="form-control" type="date" name="fnal" >
 		<input type="hidden" name="tipo" value="<?php echo $tipo ?>" >
-		<input type="submit" class="btn btn-success" value="CONSULTAR" name="consultar">
+		<input type="submit" class="btn btn-success mt-2" value="CONSULTAR" name="consultar">
 	</form>
 </div>
 

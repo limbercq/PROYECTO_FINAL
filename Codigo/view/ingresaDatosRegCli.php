@@ -1,10 +1,4 @@
-<!-- <p>PROCESO 9. AQUI VA LA PARTE DE WILSON, REGISTRO DE CLIENTES</p> -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>FORMULARIO PARA LLENAR DATOS DEL CLIENTE</title>
-</head>
+
 <?php 
 include("datoscliente1.php");
  ?>
@@ -28,5 +22,3 @@ if(isset($_POST['datos_cliente'])){
 // include("controladoringresaDatosRegCli.php");
  ?>
 	
-</body>
-</html>

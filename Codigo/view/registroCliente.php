@@ -28,13 +28,7 @@ session_start();
 
 
  ?>
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="UTF-8">
- 	<title>Document</title>
- </head>
- <body>
+<div class="col-6">
  <h2>REGISTRO DEL CLIENTE</h2>
  <br>
  	<form action="" method="post">
@@ -54,6 +48,4 @@ session_start();
  	</form>
  	
  <?php  include("controladoringresaDatosRegCli.php"); ?>
- </body>
-
- </html>
+ </div>

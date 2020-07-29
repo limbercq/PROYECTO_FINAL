@@ -1,6 +1,5 @@
 <div class="col-12">
-	<title>consultar fecha para la habitacion</title>
-</head>
+	
 <?php 
  session_start();
 if(isset($_SESSION['fini']) or isset($_SESSION['fnal'])){
@@ -25,10 +24,10 @@ if(isset($_SESSION['fini']) or isset($_SESSION['fnal'])){
 	echo "PORFAVOR INGRESA LA FECHA EN QUE DESEA RESERVAR";
 }
  ?>
-	<h1>consultar si hay habitacion libre para esa fecha </h1><br>
+	<h3 class="tipografia_2 text-info">consultar si hay habitacion libre para esa fecha </h3>
 	
 	<form method="POST">
-        <input type="submit" value="MOSTRAS OTRAS OPCIONES" name="no"> 
+        <input type="submit" class="btn btn-info" value="MOSTRAS OTRAS OPCIONES" name="no"> 
     </form>	
 	<div class="card-deck">
 	

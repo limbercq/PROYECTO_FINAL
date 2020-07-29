@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>elegirhab</title>
-</head>
+
 <?php 
 session_start();
 if(!empty($_SESSION['codhab'])){
@@ -13,13 +8,18 @@ if(!empty($_SESSION['codhab'])){
 }
 
  ?>
-<body>
-	<h1>INGRESAR CI </h1><br>
+ <div class="col-6">
+	<h3 class="tipografia_2 text-info">Ingresar CI </h3><br>
 	<form action="" method="post">
-		<label for="ci">CI: </label>
-		<input type="text" name="ci" id="ci" required>
-		
-		<input type="submit" value="ENVIAR" name="enviar">
+	<div class="input-group mb-3">
+	<div class="input-group-append">
+			<span class="input-group-text" id="basic-addon2">C.I.</span>
+		</div>
+		<input type="text" class="form-control"  name="ci" id="ci">
+		<div class="input-group-append">
+			<input type="submit" class="btn btn-success" value="ENVIAR" name="enviar">	
+		</div>
+	</div>
 	</form>
 <?php 
 
@@ -30,7 +30,7 @@ if(isset($_POST["enviar"])){
 	$sql = "SELECT * FROM usuario WHERE ci ='$ci'";
 	$nro=$base->query($sql);
 	$cliente_new=$nro->rowCount();
-	echo ": ".$ci=$_POST["ci"];
+	echo "Carnet ingresado : ".$ci=$_POST["ci"];
 	$_SESSION['ci']=$ci;
 
 }else{
@@ -38,5 +38,8 @@ if(isset($_POST["enviar"])){
 }
 
  ?>
-</body>
-</html>
+ 
+ </div>
+ <div class="col-6">
+    <img src="img/buscar.webp" alt="Card image cap" class="card-img-top">
+</div>

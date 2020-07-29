@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>cliente nuevo</title>
-</head>
+
 <?php 
 session_start();
 $_SESSION['ci'];
@@ -22,8 +17,8 @@ $cliente_new=$nro->rowCount();
 }
 
  ?>
-<body>
-	<h1>CLIENTE NUEVO </h1><br>
+ <div class="col-6 text-center">
+	<h3 class="tipografia_2 text-info">Cliente Nuevo </h3><br>
 <?php 
 if($cliente_new!=0){
 	echo "BIENVENIDO: ";
@@ -36,14 +31,14 @@ if($cliente_new!=0){
 
 echo "<form method='POST'>";
 echo "<br>";
-echo "<input type='submit' value='CONFIRMAR' name='no'> ";
+echo "<input type='submit' class='btn btn-success' value='CONFIRMAR' name='no'> ";
 echo "</form>";
 }
 else{
 echo "ERES NUEVO USUARIO PORFAVOR LLENA EL FORMULARIO PARA REALIZAR TU RESERVA :";
 echo "<br>";
 echo "<form method='POST'>";
-echo "<input type='submit' value='CLIK PARA LLENAR FORMULARIO' name='si'> ";
+echo "<input type='submit' class='btn btn-success' value='CLIK PARA LLENAR FORMULARIO' name='si'> ";
 echo "</form>";
 	
 }
@@ -54,5 +49,7 @@ header("Location: motor.php?codFlujo=F1&codProceso=P6");
 
  ?>
 
-</body>
-</html>
+</div>
+<div class="col-6">
+    <img src="img/registrar.jpg" alt="Card image cap" class="card-img-top">
+</div>
