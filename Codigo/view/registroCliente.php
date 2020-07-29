@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (isset($POST['datos_cliente'])){
+if (isset($_SESSION['password'])){
  $ci=$_SESSION['ci'];
  $nombre=$_SESSION['nombre'];
  $apellido=$_SESSION['apellido'];
@@ -13,7 +13,6 @@ if (isset($POST['datos_cliente'])){
  $nomt=$_SESSION['nom_tarjeta'];
  $mes=$_SESSION['mes'];
  $anno=$_SESSION['anno'];
-
 
  ?>
 <div class="col-6">
